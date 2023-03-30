@@ -38,6 +38,12 @@ vocode.setenv(
 )
 
 
+base_message_sv = "Hej, välkommen hit. Hur mår du idag?"
+base_message_english = "Hello, welcome here. How are you feeling today?"
+prompt_preamble_sv = "Du är en världsklass psykolog som är fokuserad på att hjälpa människor att lösa sina psykiska hälsoproblem och förbättra sitt välbefinnande."
+
+prompt_preamble_english = "You are a world class psychologist who is focused on helping people resolve their mental health issues and improve their wellbeing."
+
 async def main():
     microphone_input, speaker_output = create_microphone_input_and_speaker_output(
         streaming=True, use_default_devices=False
@@ -52,8 +58,8 @@ async def main():
         ),
         agent=ChatGPTAgent(
             ChatGPTAgentConfig(
-                initial_message=BaseMessage(text="Hello, how are you feeling today?"),
-                prompt_preamble="You are a world class psychologist who is focused on helping people resolve their mental health issues and improve their wellbeing.",
+                initial_message=BaseMessage(text=base_message_english),
+                prompt_preamble=prompt_preamble_english,
             ),
         ),
         synthesizer=AzureSynthesizer(
