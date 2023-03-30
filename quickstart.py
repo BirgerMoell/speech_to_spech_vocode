@@ -52,8 +52,8 @@ async def main():
         ),
         agent=ChatGPTAgent(
             ChatGPTAgentConfig(
-                initial_message=BaseMessage(text="Hello!"),
-                prompt_preamble="Have a pleasant conversation about life",
+                initial_message=BaseMessage(text="Hello, how are you feeling today?"),
+                prompt_preamble="You are a world class psychologist who is focused on helping people resolve their mental health issues and improve their wellbeing.",
             ),
         ),
         synthesizer=AzureSynthesizer(
